@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Introduction</title>
+    <link rel="stylesheet" href="first.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Mooli&family=Pacifico&family=Roboto+Mono:wght@400;500&display=swap" 
+    rel="stylesheet">
+    <script>
+        function checkAnswer() {
+            const idSyntax = document.getElementById("getIdSyntax").value;
+            const innSyntax = document.getElementById("innerSyntax").value;
+            if (idSyntax.length === 0 || innSyntax.length === 0) {
+                alert("You must enter an answer.");
+            } else if (idSyntax !== 'getElementById("demo")' || innSyntax !== "innerHTML") {
+                alert("Wrong answer. Please keep trying!");
+            }
+            if (idSyntax == 'getElementById("demo")' && innSyntax == "innerHTML") {
+                alert("CONGRATS! You are improving at JavaScript!");
+            }
+        }
+        function darkMode() {
+            let darkTheme = document.body;
+            let lightbulb = document.getElementById("lightbulb");
+            lightbulb.onload = function() {
+            darkTheme.className = "dark";
+            };
+            lightbulb.src = "https://media.istockphoto.com/id/121075544/photo/light-bulb-on-black.jpg?s=612x612&w=0&k=20&c=_HC9HasBAESGE144ERwEAzU0d1sKGbqlGY-TXWZWvXo=";
+        }
+        function lightMode() {
+            let lightTheme = document.body;
+            let lightbulb = document.getElementById("lightbulb");
+            lightbulb.onload = function() {
+            lightTheme.className = "light";
+            };
+            lightbulb.src = "https://www.freeiconspng.com/thumbs/lightbulb-png/light-bulb-png-bulb-png1247-12.png";
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul class="navBar">
+            <li class="navProp"><a href="html.html">HTML</a></li>
+            <li class="navProp"><a href="css.html">CSS</a></li>
+            <li class="navProp active"><a href="js.html">JavaScript</a></li>
+        </ul>
+    </nav>
+    <div id="theme">
+        <img id="lightbulb" src="https://www.freeiconspng.com/thumbs/lightbulb-png/light-bulb-png-bulb-png1247-12.png"
+            alt="lightbulb">
+        <button onclick="lightMode()">Light Mode</button>
+        <button onclick="darkMode()">Dark Mode</button>
+    </div>
+    <div class=paper>
+        <h1 class="title">JavaScript</h1>
+        <h2>Introduction about JavaScript:</h2>
+        <ul>
+            <li>JavaScript is the most popular programming language in web development.</li>
+            <li>JavaScript adds more functionality to your website.</li>
+            <li>JavaScript is usually activated with HTML elements (such as clicking button).</li>
+            <li>There are 3 ways to style a HTML document:
+                <ul style="list-style-type: circle;">
+                    <li>Inline- add JavaScript next to the HTML elements (not recommended because it looks
+                        really messy)</li>
+                    <li>External- add JavaScript using different file, a .js file</li>
+                    <li>Internal- add JavaScript in the same HTML document (in this website, we will use this
+                        way)</li>
+                </ul>
+        </ul>
+        <h2>JavaScript can do many things related HTML and CSS like:</h2>
+        <b><h3>Changing HTML Content</b></h3>
+        <p>The method getElementById().innerHTML means:</p>
+        <ul>
+            <li>finds an HTML with the id = "demo"</li>
+            <li>changes the element content (innerHTML) to Hello World!</li>
+        </ul>
+        <div class="flexbox" style="height: 400px;">
+            <!--The raw code example-->
+            <div class="rawCode">
+                &lt;<span>body</span>>
+                <br>
+                <br>
+                &lt;<span>p</span>
+                <p class=property>id</p> = <p class="value">"demo"</p>>This will be changed&lt;<span>/p</span>>
+                <br>
+                &lt;<span>script</span>>
+                <br>
+                document.getElementById(<p class="value">"demo"</p>).
+                <br>innerHTML = "Hello World!";
+                <br>
+                &lt;<span>/script</span>>
+                <br>
+                <br>
+                &lt;<span>/body</span>>
+                <br>
+            </div>
+            <!--The console of the previous code-->
+            <div class="console">
+                <p>Hello World!</p>
+            </div>
+        </div>
+        <b><h3>Changing HTML Style (CSS)</b></h3>
+        <p>It can change the style of HTML through a button or a click</p>
+        <div class="flexbox" style="height: 23%;">
+            <!--The raw code example-->
+            <div class="rawCode">
+                &lt;<span>body</span>>
+                <br>
+                <br>
+                &lt;<span>p</span>
+                <p class=property>id</p> = <p class="value">"demo"</p>>This will be changed to yellow&lt;<span>/p</span>>
+                <br>
+                &lt;<span>script</span>>
+                <br>
+                <p class="value">function</p> changingColor() { 
+                    <br>
+                    document.getElementById(<p class="value">"demo"</p>).style.
+                    <br>color = "yellow";
+                    <br>
+                }
+                <br>
+                &lt;<span>/script</span>>
+                <br>
+                &lt;<span>button</span> <p class=property>onclick</p> = <p class="value">"changingColor()"</p>><br>
+                Click Me!&lt;<span>/button</span>>
+                <br>
+                <br>
+                &lt;<span>/body</span>>
+            </div>
+            <!--The console of the previous code-->
+            <div class="console">
+                <p id = "test">This will be changed to yellow</p>
+                <button onclick="document.getElementById('test').style.color = 'yellow'">Click Me!</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!--Test understanding after reading-->
+        <div class="quiz" style="height: 17%">
+            <fieldset>
+                <legend>Check Your Understanding</legend>
+                <p>Fill in the correct syntax:
+                    <br>
+                    <br>
+                    &lt;p id = "demo">&lt;/p>
+                    <br>
+                    &lt;script>
+                    <br>
+                    document.<input type="text" id="getIdSyntax" style="width: 21%;">.<input type="text" id="innerSyntax" style="width: 10%;">= "Welcome To JavaScript!";
+                    <br>
+                    &lt;/script>
+                </p>
+                <button type="submit" onclick="checkAnswer()"><b>Check Answer</b></button>
+            </fieldset>
+        </div>
+    </div>
+</body>
+
+</html>
