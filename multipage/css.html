@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Introduction</title>
+    <link rel="stylesheet" href="first.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        function checkAnswer(){
+            const selector = document.getElementById("elementSelector").value;
+            const prop = document.getElementById("property").value;
+            if(selector.length === 0 || prop.length === 0){
+                alert("You must enter an answer.");
+            } else if(selector !== "h1" || prop !== "background-color"){
+                alert("Wrong answer. Please keep trying!");
+            }
+            if(selector == "h1" && prop == "background-color"){
+                alert("CONGRATS! You are improving at CSS!");
+            }
+        }
+        function darkMode() {
+            let darkTheme = document.body;
+            let lightbulb = document.getElementById("lightbulb");
+            lightbulb.onload = function() {
+            darkTheme.className = "dark";
+            };
+            lightbulb.src = "https://media.istockphoto.com/id/121075544/photo/light-bulb-on-black.jpg?s=612x612&w=0&k=20&c=_HC9HasBAESGE144ERwEAzU0d1sKGbqlGY-TXWZWvXo=";
+        }
+        function lightMode() {
+            let lightTheme = document.body;
+            let lightbulb = document.getElementById("lightbulb");
+            lightbulb.onload = function() {
+            lightTheme.className = "light";
+            };
+            lightbulb.src = "https://www.freeiconspng.com/thumbs/lightbulb-png/light-bulb-png-bulb-png1247-12.png";
+        }
+    </script>
+</head>
+<body> 
+    <nav>
+        <ul class = "navBar">
+            <li class = "navProp"><a href = "html.html">HTML</a></li>
+            <li class = "navProp active"><a href="css.html">CSS</a></li>
+            <li class = "navProp"><a href="js.html">JavaScript</a></li>
+        </ul>
+    </nav>
+    <div id = "theme">
+        <img id = "lightbulb" src="https://www.freeiconspng.com/thumbs/lightbulb-png/light-bulb-png-bulb-png1247-12.png" alt="lightbulb">
+        <button onclick="lightMode()" style = "margin: 0 5% 0">Light Mode</button>
+        <button onclick="darkMode()" style = "margin: 0 5% 0">Dark Mode</button>
+    </div>
+    <div class = paper>
+        <h1 class = "title">CSS</h1>
+        <h2>Introduction about CSS:</h2>
+        <ul>
+            <li>CSS, Cascading Style Sheets, designs the website layout, styles, colors, and etc.</li>
+            <li>CSS is used with HTML to style the content of the web.</li>
+            <li>CSS saves a lot of time and typing, because it can add a layout to many webpages.</li>
+            <li>There are 3 ways to style a HTML document:
+                <ul style = "list-style-type: circle;">
+                    <li>Inline styling- add styling next to the HTML elements (not recommended because it looks really messy)</li>
+                    <li>External styling- add styling using different file, a .css file</li>
+                    <li>Embedding styling- add styling in the same HTML document (in this website, we will use this styling)</li>
+                </ul>
+            </li>
+        </ul>
+        <h2>Basic layout in CSS:</h2>
+        <div class = "flexbox" style = "height: 820px;">
+            <!--The raw code example-->
+            <div class = "rawCode">
+                <div class="small">
+                    &lt;<span>head</span>>
+                    <br>
+                    &lt;<span>style</span>>
+                    <br>
+                    <span>body </span> {
+                    <dd>background-color: <span class = "value">pink;</span></dd>
+                    }
+                    <br>
+                    <span>h1 </span> {
+                        <dd>color: <span class = "value">darkred;</span></dd>
+                        <dd>text-align: <span class = "value">center;</span></dd>
+                    }
+                    <br>
+                    <span>p </span> {
+                    <dd>font-size: <span class = "value">25px;</span></dd>
+                    }
+                    <br>
+                    &lt;<span>/style</span>>
+                    <br>
+                    &lt;<span>/head</span>>
+                    <br>
+                    &lt;<span>body</span>>
+                    <br>
+                    <br>
+                    &lt;<span>h1</span>>This is a heading&lt;<span>/h1</span>>
+                    <br>
+                    &lt;<span>p</span>>This is a big paragraph&lt;<span>/p</span>>
+                    <br>
+                    <br>
+                    &lt;<span>/body</span>>
+                    <br>
+                </div>
+            </div>
+            <!--The console of the previous code-->
+            <div class = "console" style = "background-color: pink;">
+                <h1 class = "exception">This is a heading</h1>
+                <p>This is a big paragraph</p>
+            </div>
+        </div>
+        <br>
+        <h3>Explaination:</h3>
+        <ul>
+            <li>Styling needs to be in the &lt;head> element</li>
+            <li>Words between the {} are called Declaration</li>
+            <li>h1, p, and body are called element selector</li>
+            <li><b class = "property">color, text-align, background-color, font-size</b> are called Property</li>
+            <li><b class = "value">pink, darkred, center, 25px</b> are called Value</li>
+            <li>There are many selectors, but the most three common ones are:</li>
+                <ul style = "list-style-type: circle;">
+                    <li>Element selector</li>
+                    <li>Class selector</li>
+                    <li>ID selector</li>
+                </ul>
+            </li>
+        </ul>
+        <br>
+        <!--Test understanding after reading-->
+        <div class = "quiz" style = "height: 380px">
+            <fieldset>
+                <legend>Check Your Understanding</legend>
+                <p>Make all h1 background purple:
+                    <br>
+                    &lt;style>
+                    <br>
+                    <input type="text" id = "elementSelector">{
+                    <br>
+                    <input type="text" id = "property">: purple;
+                    <br>
+                    }
+                </p>
+                <button type="submit" onclick="checkAnswer()"><b>Check Answer</b></button>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>

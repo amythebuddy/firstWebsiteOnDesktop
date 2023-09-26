@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="first.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>HTML Introduction</title>
+    <script>
+        function checkAnswer(){
+            const selector = document.getElementById("elementSelector").value;
+            const prop = document.getElementById("property").value;
+            if(selector.length === 0 || prop.length === 0){
+                alert("You must enter an answer.");
+            } else if(selector !== "h1" || prop !== "background-color"){
+                alert("Wrong answer. Please keep trying!");
+            }
+            if(selector == "h1" && prop == "background-color"){
+                alert("CONGRATS! You are improving at JavaScript!");
+            }
+        }
+        function darkMode() {
+            let darkTheme = document.body;
+            let lightbulb = document.getElementById("lightbulb");
+            lightbulb.onload = function() {
+            darkTheme.className = "dark";
+            };
+            lightbulb.src = "https://media.istockphoto.com/id/121075544/photo/light-bulb-on-black.jpg?s=612x612&w=0&k=20&c=_HC9HasBAESGE144ERwEAzU0d1sKGbqlGY-TXWZWvXo=";
+        }
+        function lightMode() {
+            let lightTheme = document.body;
+            let lightbulb = document.getElementById("lightbulb");
+            lightbulb.onload = function() {
+            lightTheme.className = "light";
+            };
+            lightbulb.src = "https://www.freeiconspng.com/thumbs/lightbulb-png/light-bulb-png-bulb-png1247-12.png";
+        }
+    </script>
+</head>
+<body> 
+    <nav>
+        <ul class = "navBar">
+            <li class = "navProp active"><a href = "html.html">HTML</a></li>
+            <li class = "navProp"><a href="css.html">CSS</a></li>
+            <li class = "navProp"><a href="js.html">JavaScript</a></li>
+        </ul>
+    </nav>
+    <div id = "theme">
+        <img id = "lightbulb" src="https://www.freeiconspng.com/thumbs/lightbulb-png/light-bulb-png-bulb-png1247-12.png" alt="lightbulb">
+        <button onclick="lightMode()" style = "margin: 0 5% 0">Light Mode</button>
+        <button onclick="darkMode()" style = "margin: 0 5% 0">Dark Mode</button>
+    </div>
+    <div class = paper>
+        <h1 class = "title">HTML</h1>
+        <h2>Introduction about HTML:</h2>
+        <ul>
+            <li>HTML, or HyperText Markup Language, is a standard language to create the basic structures for Web pages.</li>
+            <li>HTML was created in 1993 and it is used to now!</li>
+            <li>HTML is easy to learn because it is similar to English.</li>
+            <li>HTML uses a list of elements at the beginning of the content to tell the computer that "this is a heading", "this is an image", etc.</li>
+        </ul>
+        <h2>Basic layout in HTML:</h2>
+        <div class = "flexbox">
+            <div class = "rawCode">
+                    &lt;<span>!DOCTYPE html</span>>
+                    <br>
+                    &lt;<span>html</span>>
+                    <br>
+                    &lt;<span>head</span>>
+                    <br>
+                    &lt;<span>title</span>>Document&lt;<span>/title</span>>
+                    <br>
+                    &lt;<span>/head</span>>
+                    <br>
+                    &lt;<span>body</span>>
+                    <br>
+                    <br>
+                    &lt;<span>h1</span>>This is a heading </span>&lt;<span>/h1</span>>
+                    <br>
+                    &lt;<span>p</span>>This is a paragraph </span>&lt;<span>/p</span>>
+                    <br>
+                    <br>
+                    &lt;<span>/body</span>>
+                    <br>
+                    &lt;<span>/html</span>>
+            </div>
+            <div class = "console">
+                <h1>This is a heading</h1>
+                <p>This is a paragraph</p>
+            </div>
+        </div>
+        <h2>Explaination:</h2>
+        <ul>
+            <li><span>&lt;!DOCTYPE html></span> declaration defines what kind of version the HTML is. (we are using HTML5)</li>
+            <li><span>&lt;html></span> element is the root element of an HTML page</li>
+            <li><span>&lt;head></span> element has meta information about the HTML page</li>
+            <li><span>&lt;title></span> element is shown in the browser's title bar or in the page's tab</li>
+            <li><span>&lt;body></span> element defines the document's body, and has all the visible contents, such as headings, paragraphs, images, etc.</li>
+            <li><span>&lt;h1></span> element is the largest heading</li>
+            <li><span>&lt;p></span> element is a paragraph</li>
+        </ul>
+        <h2>HTML Elements:</h2>
+        <h3>Most HTML elements have an opening and closing tag</h3>
+        <p>
+            <span>&lt;tagname></span>Type content here... <span>&lt;/tagname></span>
+            <br>
+            <br>
+            <span>&lt;h1></span>This is a heading <span>&lt;/h1></span>
+            <br>
+            <span>&lt;p></span>This is a paragraph <span>&lt;/p></span>
+        </p>
+        <h4>Important: There are some elements do not have an end tag. 
+        Those are called empty elements.
+        <br>
+        <br>
+        Only the content inside the body section will be displayed in a browser. 
+        The title only shows in the page's tab.
+        </h4>
+        <div class = "quiz">
+            <fieldset>
+                <legend>Check Your Understanding</legend>
+                <p>&lt;<input type="text" id = "opening">>This is the largest heading I've ever seen in my life&lt;<input type="text" id = "closing">></p>
+                <button type="submit" onclick="checkAnswer()"><b>Check Answer</b></button>
+            </fieldset>
+        </div>
+    </div>
+</body>
+</html>
